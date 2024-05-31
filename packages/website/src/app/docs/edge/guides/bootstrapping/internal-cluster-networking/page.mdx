@@ -29,6 +29,18 @@ We provide a module to deploy CoreDNS called [kube\_core\_dns](/docs/edge/refere
 
 Let's deploy it now.
 
+### Remove Existing CoreDNS service
+
+EKS may have automatically installed a version CoreDNS addon when we previously created the cluster.  If so, we will need to remove it.
+
+1. In K9s, navigate to `:services`.  Don't forget to change the namespace filter to "all" by pressing `0`.
+
+2. If `coredns` is present in the `kube-system` namespace, delete it with `Ctrl + D` (or `⌘+D` on Mac).
+
+3. In K9s, navigate to `:deployments`. Don't forget to change the namespace filter to "all" by pressing `0`.
+
+4. If `coredns` is present in the `kube-system` namespace, delete it with `Ctrl + D` (or `⌘+D` on Mac).
+
 ### Deploy the CoreDNS Module
 
 1. Create a new directory adjacent to your `aws_eks` module called `kube_core_dns`.
