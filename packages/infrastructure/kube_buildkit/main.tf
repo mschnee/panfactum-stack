@@ -169,6 +169,12 @@ module "buildkit" {
       mount_path = "/run/buildkit"
       size_mb    = 10
       node_local = true
+    },
+    "runc" = {
+      mount_path = "/run/runc"
+    }
+    "tmp" = {
+      mount_path = "/tmp"
     }
   }
 
