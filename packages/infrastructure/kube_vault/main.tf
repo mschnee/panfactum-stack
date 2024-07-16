@@ -324,6 +324,7 @@ resource "helm_release" "vault" {
             enabled   = true
             setNodeId = true
             config = templatefile("./ha.hcl", {
+              vpc_cidr     = var.vpc_cidr
               aws_region   = data.aws_region.region.name
               kms_key_id   = module.unseal_key.id
               aws_role_arn = module.aws_permissions.role_arn

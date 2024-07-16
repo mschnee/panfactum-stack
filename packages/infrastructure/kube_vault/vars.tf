@@ -15,6 +15,12 @@ variable "eks_cluster_name" {
   type        = string
 }
 
+variable "vpc_cidr" {
+  description = "The CIDR of the VPC. This configures the x_forwarded_for_authorized_addrs option in ha.hcl to trust ingress-nginx."
+  type        = string
+  default     = "10.0.0.0/16"
+}
+
 variable "vault_storage_size_gb" {
   description = "The number of gigabytes to allocate to vault storage."
   type        = number
