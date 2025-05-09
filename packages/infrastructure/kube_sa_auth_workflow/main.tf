@@ -44,8 +44,8 @@ resource "kubernetes_role" "role" {
   }
   rule {
     api_groups = ["argoproj.io"]
-    resources  = ["workflowtaskresults"]
-    verbs      = ["create", "patch"]
+    resources  = var.resources
+    verbs      = var.verbs
   }
 }
 

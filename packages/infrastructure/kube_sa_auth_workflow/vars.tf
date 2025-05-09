@@ -25,3 +25,15 @@ variable "extra_aws_permissions" {
   type        = string
   default     = "{}"
 }
+
+variable "resources" {
+  description = "The resources that the service account should have access to"
+  type        = list(string)
+  default     = ["workflowtaskresults"]
+}
+
+variable "verbs" {
+  description = "The verbs that the service account should have access to"
+  type        = list(string)
+  default     = ["create", "patch"]
+}
